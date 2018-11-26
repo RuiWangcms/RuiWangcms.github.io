@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
 
   
@@ -23,11 +23,11 @@
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 </html>
 <body>
-  <div id="container">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
     <div id="wrap">
       <header id="header">
   <div id="banner"></div>
@@ -97,7 +97,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/25/hello-world/" data-id="cjowyniy50001nctq4ouxkwdz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/25/hello-world/" data-id="cjowywf7r0001n4tqslt47xrm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -132,14 +132,19 @@
         <p>This post describes how to get carriers’ effective mass in a computational way. To achieve this, the band structure should have been calculated through CASTEP or VASP.</p>
 <h2 id="Overview-of-steps"><a href="#Overview-of-steps" class="headerlink" title="Overview of steps"></a>Overview of steps</h2><ol>
 <li>Calculate the band structure diagram and get the result file.</li>
-<li>Find the particular part band that you care and employ units transformation.</li>
-<li>Fit the band with a quadratic funaction, $y = a + bx + cx^2$</li>
+<li>Find the particular part band that you care and employ <strong>units transformation</strong>.</li>
+<li>Fit the band with a quadratic function, $$y = a + bx + cx^2$$.</li>
+<li>The effective mass of carriers could be written as $m = frac{1}{2c}m_0$.</li>
 </ol>
+<h2 id="Step1-Plot-the-band-structure"><a href="#Step1-Plot-the-band-structure" class="headerlink" title="Step1: Plot the band structure"></a>Step1: Plot the band structure</h2><p>This step is common. Calculate the band structure and plot it. Here is an example of SiC in X direction. (Suppose we want to calculate the electrons’s effective mass of SiC in X direction)<br><img src="./pictures/SiC.tif" width="500" height="500" div="" align="center"><br>In the following parts, I will show how to get the effective mass of electrons.</p>
+<h2 id="Step2-Units-transformation"><a href="#Step2-Units-transformation" class="headerlink" title="Step2: Units transformation"></a>Step2: Units transformation</h2><p>In the current diagram, the unit of Y axis is $eV$ while the unit of X axis is $\AA^(-1)$. In order to simply the fitting process, the units transformation is needed. $eV$ is transformed into $Hartree$ and the unit of X, meaning the path in K space, is converted to $Born^(-1)$. The relationships are<br>$1 Hartree = 27.21 eV, 1 Born = 0.5292 \AA$ </p>
+<h2 id="Step3-Quadratic-functin-fitting"><a href="#Step3-Quadratic-functin-fitting" class="headerlink" title="Step3: Quadratic functin fitting"></a>Step3: Quadratic functin fitting</h2><p>After the units transformation, we can fit the specific band with a quadratic functin like $$y = a + bx + cx^2$$. It should be stated that the fitting coefficients<br>depend on many factors, the mesh points in K space, points you choose to fit and so on. If you want to use this method to get the effective mass, you should choose higher calculation parameters. </p>
+<h2 id="Step4-Get-the-effective-mass"><a href="#Step4-Get-the-effective-mass" class="headerlink" title="Step4: Get the effective mass"></a>Step4: Get the effective mass</h2><p>According to the definition of effective mass, $$, we can get the result,$m = frac{1}{2c}m_0$. $c$ is the coefficient of $x^2$ and the Planck constant has been included in the second derivative through the units transforamtion.<br>Here are my results and the experimental values.  </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/Rui/" data-id="cjowynixl0000nctqex970g8s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/25/Rui/" data-id="cjowywf7a0000n4tq7g1au9mw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -225,6 +230,6 @@
 
 
 
-  </div>
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
